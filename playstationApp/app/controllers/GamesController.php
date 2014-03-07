@@ -16,10 +16,11 @@ class GamesController extends BaseController{
     
     public function handleCreate(){
         //Handle create form submission
+        $complete = (Input::get('complete') == 'on') ? 1 : 0;
         $game = new Game;
         $game->title        = Input::get('title');
         $game->publisher    = Input::get('publisher');
-        $game->complete     = Input::get('complete');
+        $game->complete     = $complete;
         $game->save();
         
         return Redirect::action('GamesController@index');
@@ -32,10 +33,11 @@ class GamesController extends BaseController{
     
     public function handleEdit(){
         //Handle edit form submission
+        $complete = (Input::get('complete') == 'on') ? 1 : 0;
         $game = Game::findOrFail(Input::get('id'));
         $game->title        = Input::get('title');
         $game->publisher    = Input::get('publisher');
-        $game->complete     = Input::get('complete');
+        $game->complete     = $complete;
         
         $game->save();
         

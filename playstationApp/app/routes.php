@@ -19,9 +19,15 @@ Route::get('/', 'GamesController@index');
 Route::get('/create', 'GamesController@create');
 Route::get('/edit/{game}', 'GamesController@edit');
 Route::get('/delete/{game}', 'GamesController@delete');
+//Users managment
+Route::get('/register', 'UsersController@register');
+Route::get('/logout', 'UsersController@logout');
+Route::get('/login', 'UsersController@login');
 
 //Handle submissions
-
 Route::post('/create', 'GamesController@handleCreate');
 Route::post('/edit', 'GamesController@handleEdit');
 Route::post('/delete', 'GamesController@handleDelete');
+//Users submissions
+Route::post('/register', 'UsersController@handleRegister');
+Route::post('/login', 'UsersController@handleLogin');

@@ -19,7 +19,7 @@
         </div>
         <div class="checkbox">
             <label for="complete">
-                <input type="checkbox" name="complete" {{ $game->complete ? 'checked' : '' }} /> Complete?
+                <input type="checkbox" name="complete" {{ (int)$game->complete ? 'checked' : '' }} /> Complete?
             </label>
         </div>
         <input type="submit" value="Save" class="btn btn-primary" />
