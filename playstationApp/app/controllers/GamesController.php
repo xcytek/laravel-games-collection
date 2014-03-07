@@ -4,7 +4,7 @@ class GamesController extends BaseController{
     
     public function index(){
         //Show a listing of games
-        $games = Game::all();
+        $games = Game::paginate(1);
         
         return View::make('index', compact('games'));
     }
