@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'playstationApp',
 			'username'  => 'root',
-			'password'  => 'NEOXONE15',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
