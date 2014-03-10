@@ -18,6 +18,7 @@ class CreateGames extends Migration {
     		$table->string('title','128');
     		$table->string('publisher','128');
     		$table->boolean('complete');
+    		$table->string('user_email', 320);
     		$table->timestamps();    
 		});
 		
