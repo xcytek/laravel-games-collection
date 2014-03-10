@@ -15,10 +15,10 @@
 Route::model('game', 'Game');
 
 //Show pages
-Route::get('/', 'GamesController@index');
-Route::get('/create', 'GamesController@create');
-Route::get('/edit/{game}', 'GamesController@edit');
-Route::get('/delete/{game}', 'GamesController@delete');
+Route::get('/', array('before' => 'auth', 'uses' => 'GamesController@index'));
+Route::get('/create', array('before' => 'auth', 'uses' => 'GamesController@create'));
+Route::get('/edit/{game}', array('before' => 'auth', 'uses' => 'GamesController@edit'));
+Route::get('/delete/{game}', array('before' => 'auth', 'uses' => 'GamesController@delete'));
 //Users managment
 Route::get('/register', 'UsersController@register');
 Route::get('/logout', 'UsersController@logout');
