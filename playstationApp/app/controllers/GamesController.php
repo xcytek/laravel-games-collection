@@ -1,10 +1,10 @@
 <?php
 
 class GamesController extends BaseController{
-    
+
     public function index(){
-        //Show a listing of games
-        $games = Game::paginate(1);
+        //Show a listing of games by user and paginated results
+        $games = Game::where('user_email','=',Auth::user()->email)->paginate(15);
         
         return View::make('index', compact('games'));
     }
