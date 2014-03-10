@@ -11,7 +11,30 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('GamesTableSeeder');
 	}
+	
+	
+
+}
+
+use Faker\Factory as Faker;
+
+class GamesTableSeeder extends Seeder {
+
+    public function run()
+    {
+        $faker = Faker::create();
+
+        foreach(range(1, 100) as $index)
+        {
+            Game::create([
+                'title' => $faker->username, 
+                'publisher' => $faker->city, 
+                'complete' => 0
+	            
+            ]);
+        }
+    }
 
 }
