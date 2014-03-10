@@ -298,10 +298,11 @@ class UsersController extends BaseController{
     public function handleLogin(){
         $user = Input::all();
         
-        if (!Auth::attempt($user))
-            return Redirect::to('login');
-            
-        Session::put('username', $user['username']);
+        if (Auth::attempt($user)){
+            Session::put('username', $user['username']);    
+            return Redirect::intended('/');
+        }
+        
         return Redirect::action('GamesController@index');
     }
     
